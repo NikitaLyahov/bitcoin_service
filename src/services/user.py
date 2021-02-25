@@ -1,11 +1,12 @@
 from typing import Optional
 
 from application.core.errors.exceptions import LogHTTPException
+from application.core.db.layer import AbstractDatabaseLayer
 
 
 class UserService:
 
-    def __init__(self, user_id: Optional[str] = None, *, database) -> None:
+    def __init__(self, user_id: Optional[str] = None, *, database: AbstractDatabaseLayer) -> None:
         self.user_id = user_id
         self.database = database
         self.model_name = 'users'

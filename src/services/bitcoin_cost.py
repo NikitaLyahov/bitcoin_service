@@ -1,9 +1,11 @@
 from typing import Optional
 
+from application.core.db.layer import AbstractDatabaseLayer
+
 
 class BitcoinCostService:
 
-    def __init__(self, *, database) -> None:
+    def __init__(self, *, database: AbstractDatabaseLayer) -> None:
         self.database = database
         self.model_name = 'bitcoin'
         self.id_key = '_id'
