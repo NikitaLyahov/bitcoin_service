@@ -1,5 +1,7 @@
 # Bitcoin service
 
+This is a microservice built on the [FastAPI](https://github.com/tiangolo/fastapi) and [MongoDB](https://github.com/mongodb/mongo). Docker-compose and Makefile are added for ease of deployment.
+
 To run the server up:
 ```bash
 make run
