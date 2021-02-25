@@ -1,0 +1,3 @@
+[flake8]
+exclude = __pycache__,__init__.py
+max-line-length = 160

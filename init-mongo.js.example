@@ -1,0 +1,14 @@
+db.createUser({
+    user: 'mongo_user',
+    pwd: 'mongo_pass',
+    roles: [{
+        role: 'readWrite',
+        db: 'mongo_database'
+    }]
+})
+
+db.getSiblingDB('mongo_database')
+
+db.createCollection('bitcoin')
+
+db.bitcoin.insert({'price': 100, 'updated_at': new Date().toJSON()})
