@@ -1,17 +1,17 @@
 db.createUser({
-    user: 'bitcoin_service',
-    pwd: 'sdve2m3kn23r',
+    user: process.env.MONGO_INITDB_ROOT_USERNAME,
+    pwd: process.env.MONGO_INITDB_ROOT_PASSWORD,
     roles: [{
         role: 'readWrite',
-        db: 'bitcoin_service'
+        db: process.env.MONGO_INITDB_DATABASE
     }]
 })
 
-db.getSiblingDB('bitcoin_service')
+db.getSiblingDB('mongo_database')
 
 db.createCollection('bitcoin')
 
 db.bitcoin.insert({
-    'price': 100.00,
+    'price': 100,
     'updated_at': new Date().toJSON()
 })
